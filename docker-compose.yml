@@ -1,0 +1,19 @@
+services:
+  webapp:
+    build: .
+    container_name: webapp
+    hostname: webapp
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+
+  nginx:
+    image: nginx:1.17-alpine
+    container_name: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - webapp
