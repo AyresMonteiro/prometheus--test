@@ -6,6 +6,8 @@ class LogRequestMiddleware extends BaseMiddleware {
    * @param {AbstractLogger} logger
    */
   constructor(logger) {
+    super()
+
     this.logger = logger
   }
 
