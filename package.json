@@ -21,6 +21,8 @@
     "supertest": "^7.0.0"
   },
   "dependencies": {
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "express-prom-bundle": "^7.0.0",
+    "prom-client": "^15.1.2"
   }
 }
