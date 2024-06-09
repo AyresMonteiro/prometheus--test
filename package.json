@@ -1,0 +1,17 @@
+{
+  "name": "prometheus-test",
+  "version": "1.0.0",
+  "description": "Testing Prometheus integration with simple node.js web app.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "prometheus",
+    "nodejs",
+    "webapp",
+    "metrics"
+  ],
+  "author": "AyresMonteiro <ayresmonteiro52@gmail.com>",
+  "license": "MIT"
+}
