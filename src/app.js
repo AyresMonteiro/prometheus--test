@@ -1,7 +1,4 @@
 const express = require('express')
-const { LogRequestMiddleware } = require('./middleware/log-request')
-const { ConsoleLogger } = require('./infra/console/logger')
-
 class PrometheusTestApp {
   constructor() {
     this.app = express()
@@ -29,10 +26,13 @@ class PrometheusTestApp {
     })
   }
 
-  applyMiddlewares() {
-    const logRequestMiddleware = new LogRequestMiddleware(new ConsoleLogger())
-
-    this.app.use(logRequestMiddleware.getMiddlewareHandler())
+  /**
+   * @param {(import('express').Handler)[]} middlewares 
+   */
+  applyMiddlewares(middlewares = []) {
+    middlewares.forEach((middleware) => {
+      this.app.use(middleware)
+    })
   }
 }
 
