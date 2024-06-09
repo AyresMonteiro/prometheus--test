@@ -4,6 +4,8 @@
   "description": "Testing Prometheus integration with simple node.js web app.",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch-path=./src index.js",
     "test": "jest"
   },
   "keywords": [
