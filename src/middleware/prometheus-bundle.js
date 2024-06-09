@@ -2,7 +2,7 @@ const promBundle = require('express-prom-bundle')
 
 const { BaseMiddleware } = require('../interfaces/base-middleware')
 
-class PrometheusBundlerMiddleware extends BaseMiddleware {
+class PrometheusBundleMiddleware extends BaseMiddleware {
   /**
    * @returns {import("express").Handler}
    */
@@ -12,5 +12,5 @@ class PrometheusBundlerMiddleware extends BaseMiddleware {
 }
 
 module.exports = {
-  PrometheusBundlerMiddleware,
+  PrometheusBundleMiddleware,
 }
