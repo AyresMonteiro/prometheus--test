@@ -1,6 +1,7 @@
 const { AbstractLogger } = require('../interfaces/abstract-logger')
+const { BaseMiddleware } = require('../interfaces/base-middleware')
 
-class LogRequestMiddleware {
+class LogRequestMiddleware extends BaseMiddleware {
   /**
    * @param {AbstractLogger} logger
    */
@@ -8,6 +9,9 @@ class LogRequestMiddleware {
     this.logger = logger
   }
 
+  /**
+   * @returns {import("express").Handler}
+   */
   getMiddlewareHandler() {
     const ctx = this
 
