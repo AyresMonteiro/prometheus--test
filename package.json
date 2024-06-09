@@ -13,5 +13,8 @@
     "metrics"
   ],
   "author": "AyresMonteiro <ayresmonteiro52@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
 }
