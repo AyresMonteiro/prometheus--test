@@ -11,7 +11,12 @@ class PrometheusBundleMiddleware extends BaseMiddleware {
    * @returns {import("express").Handler}
    */
   getMiddlewareHandler() {
-    return promBundle({ includeMethod: true })
+    return promBundle({
+      includeMethod: true,
+      includePath: true,
+      includeUp: true,
+      includeStatusCode: true,
+    })
   }
 }
 
