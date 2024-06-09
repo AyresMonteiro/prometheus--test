@@ -1,12 +1,10 @@
 const express = require('express')
+const { LogRequestMiddleware } = require('./middleware/log-request')
+const { ConsoleLogger } = require('./infra/console/logger')
 
 class PrometheusTestApp {
   constructor() {
     this.app = express()
-
-    this.app.get('/', (req, res) => {
-      return res.status(200).send('<h1>Hello World!</h1>')
-    })
   }
 
   getApp() {
@@ -21,6 +19,20 @@ class PrometheusTestApp {
 
       console.log(message)
     })
+  }
+
+  applyRoutes() {
+    this.app.get('/', (_req, res) => {
+      return res.status(200).json({
+        message: 'Hello World!',
+      })
+    })
+  }
+
+  applyMiddlewares() {
+    const logRequestMiddleware = new LogRequestMiddleware(new ConsoleLogger())
+
+    this.app.use(logRequestMiddleware.getMiddlewareHandler())
   }
 }
 
